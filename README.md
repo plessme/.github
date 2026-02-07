@@ -6,12 +6,12 @@ This repository contains organization-wide configuration for the plessme distrib
 
 ### Issue Templates
 
-This repository provides four standardized issue templates for all repositories in the organization:
+This repository provides standardized issue templates for **service repositories**:
 
-- **Feature** (`ISSUE_TEMPLATE/feature.yml`): Cross-cutting features spanning multiple services
-- **Enabler** (`ISSUE_TEMPLATE/enabler.yml`): Technical enablers for infrastructure, tooling, or architecture
 - **Story** (`ISSUE_TEMPLATE/story.yml`): User-facing functionality in a single service
 - **Task** (`ISSUE_TEMPLATE/task.yml`): Technical tasks or subtasks
+
+**Note:** Feature and Enabler templates are defined in the `plessme/plessme` tracking repository only, as these issue types should only be created there.
 
 ### Pull Request Template
 
@@ -23,23 +23,19 @@ See `profile/WORKFLOW.md` for detailed workflow documentation on using these tem
 
 ## How It Works
 
-Any repository in the `plessme` organization **without** its own `.github/ISSUE_TEMPLATE/` directory will automatically inherit these templates.
+Any repository in the `plessme` organization **without** its own `.github/ISSUE_TEMPLATE/` directory will automatically inherit these templates (Story and Task).
 
-Individual repositories can:
+**Template Distribution:**
 
-- **Inherit all templates**: Do nothing (default behavior)
-- **Override templates**: Create their own `.github/ISSUE_TEMPLATE/` directory
-- **Selective override**: Copy specific templates to customize, inherit others
+- **Organization `.github` (this repo)**: Story and Task templates
+  - Inherited by all service repositories
+  - Prevents creating Features/Enablers in the wrong place
 
-## Repository-Specific Overrides
+- **`plessme/plessme` tracking repository**: Feature and Enabler templates
+  - Local override ensures only Features/Enablers can be created there
+  - Enforces the hierarchy at the template level
 
-### plessme/plessme (Tracking Repository)
-
-The central tracking repository overrides templates to only show Feature and Enabler types, since Stories and Tasks are tracked in service repositories.
-
-### Service Repositories
-
-Service repositories inherit all four templates by default, but developers typically use Story and Task templates.
+This design prevents mistakes by making it **impossible** to create the wrong issue type in the wrong repository.
 
 ## Usage with Claude Code
 
@@ -57,9 +53,9 @@ All templates follow GitHub Issue Forms syntax (YAML) and include:
 - **Structured fields**: Title, description, acceptance criteria, etc.
 - **Estimated effort**: Small/Medium/Large/XLarge dropdown
 - **Technical stack**: Free-form text for specifying technologies
-- **Parent references**: For linking Stories/Tasks to their parents
+- **Parent references**: For linking Stories to Features/Enablers, Tasks to Stories
 - **Claude Code context**: Special instructions for AI-assisted implementation
-- **Consistent labels**: `type: *` and `status: *` for filtering
+- **Consistent labels**: `type: story`, `type: task`, `status: planned`
 
 ## Issue Hierarchy
 
