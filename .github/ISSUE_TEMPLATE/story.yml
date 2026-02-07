@@ -1,0 +1,96 @@
+name: Story
+description: User-facing functionality in a single service
+title: "[STORY] "
+labels: ["type: story", "status: planned"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Story Template
+        Use this template for user-facing functionality that implements part of a Feature or Enabler.
+
+  - type: input
+    id: title
+    attributes:
+      label: Story Title
+      description: Clear, concise user story title
+      placeholder: "Implement user authentication API endpoints"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What functionality does this deliver?
+      placeholder: "As a [user type], I want [goal] so that [reason]"
+    validations:
+      required: true
+
+  - type: input
+    id: parent
+    attributes:
+      label: Parent Feature/Enabler
+      description: "Reference to parent issue (format: org/repo#number)"
+      placeholder: "plessme/plessme#42"
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How do we know this story is complete?
+      value: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+        - [ ] Criterion 3
+    validations:
+      required: true
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Estimated Effort
+      description: Relative complexity/time estimate
+      options:
+        - Small
+        - Medium
+        - Large
+        - XLarge
+    validations:
+      required: true
+
+  - type: input
+    id: tech-stack
+    attributes:
+      label: Technical Stack
+      description: "Technologies involved (e.g., Java/Quarkus, PostgreSQL, Kafka)"
+      placeholder: "Java/Quarkus, PostgreSQL, RESTEasy Reactive"
+    validations:
+      required: false
+
+  - type: textarea
+    id: technical-approach
+    attributes:
+      label: Technical Approach
+      description: Brief outline of the implementation approach
+      placeholder: "Key implementation decisions, patterns to use, or architectural considerations"
+    validations:
+      required: false
+
+  - type: textarea
+    id: claude-context
+    attributes:
+      label: Claude Code Context
+      description: Special instructions or context for AI implementation
+      placeholder: "Architectural patterns to follow, constraints, or specific guidance for agents"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## Tasks
+        This section will be populated as Tasks are created for this Story.

@@ -1,0 +1,99 @@
+name: Task
+description: Technical task or subtask of a Story
+title: "[TASK] "
+labels: ["type: task", "status: planned"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Task Template
+        Use this template for technical tasks that implement part of a Story.
+
+  - type: input
+    id: title
+    attributes:
+      label: Task Title
+      description: Clear, concise task title
+      placeholder: "Add JWT token validation middleware"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What needs to be done?
+      placeholder: "Detailed description of the technical work required"
+    validations:
+      required: true
+
+  - type: input
+    id: parent
+    attributes:
+      label: Parent Story
+      description: "Reference to parent issue (format: org/repo#number)"
+      placeholder: "plessme/backend-service#123"
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical-details
+    attributes:
+      label: Technical Details
+      description: Implementation details, code changes, or technical specifications
+      placeholder: "Files to modify, functions to create, APIs to call, etc."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Estimated Effort
+      description: Relative complexity/time estimate
+      options:
+        - Small
+        - Medium
+        - Large
+        - XLarge
+    validations:
+      required: true
+
+  - type: input
+    id: tech-stack
+    attributes:
+      label: Technical Stack
+      description: "Technologies involved (e.g., Java/Quarkus, PostgreSQL)"
+      placeholder: "Java/Quarkus, SmallRye JWT"
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How do we know this task is complete?
+      value: |
+        - [ ] Code implemented
+        - [ ] Tests added
+        - [ ] Tests passing
+        - [ ] Code reviewed
+    validations:
+      required: true
+
+  - type: textarea
+    id: testing-strategy
+    attributes:
+      label: Testing Strategy
+      description: How should this be tested?
+      placeholder: "Unit tests, integration tests, manual testing steps"
+    validations:
+      required: false
+
+  - type: textarea
+    id: claude-context
+    attributes:
+      label: Claude Code Context
+      description: Special instructions or context for AI implementation
+      placeholder: "Specific patterns to use, constraints, or implementation guidance for agents"
+    validations:
+      required: false
