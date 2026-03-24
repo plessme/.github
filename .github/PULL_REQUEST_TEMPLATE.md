@@ -1,14 +1,14 @@
-## Summary
+# Summary
 
 <!-- Brief description of what this PR does -->
 
 ## Related Issues
 
-<!-- Link to related issues using format: Closes #123, Relates to plessme/plessme#42 -->
+<!-- Link related issues, for example: Closes #123 or Relates to owner/repo#42 -->
 
 Closes #
 
-## Changes
+## Key Changes
 
 <!-- List key changes made in this PR -->
 
@@ -27,17 +27,11 @@ Closes #
 
 ## Checklist
 
-- [ ] Code follows project style guidelines
 - [ ] Self-review completed
-- [ ] Comments added for complex logic
-- [ ] Documentation updated (if needed)
-- [ ] No new warnings introduced
-- [ ] Tests provide adequate coverage (80%+)
+- [ ] Tests and checks are appropriate for the change
+- [ ] Documentation updated if needed
+- [ ] Breaking changes are documented if applicable
 
 ## Screenshots/Recordings
 
 <!-- If applicable, add screenshots or recordings to demonstrate changes -->
-
----
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
