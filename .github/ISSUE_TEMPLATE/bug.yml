@@ -1,0 +1,106 @@
+---
+name: Bug
+description: Report a defect or regression
+type: Bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Capture the problem clearly enough that it can be reproduced,
+        understood, and verified when fixed.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is broken?
+      placeholder: "Requests to the login endpoint fail with a 500 error
+        after token refresh"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Behavior
+      description: What happens today?
+      placeholder: "Describe the observed behavior,
+        including errors or unexpected results"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: "Describe the expected result"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction Steps
+      description: How can the issue be reproduced?
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: How severe is the issue?
+      options:
+        - Low
+        - Medium
+        - High
+        - Critical
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How will we know the bug is fixed?
+      value: |
+        - [ ] Root cause identified
+        - [ ] Fix implemented
+        - [ ] Regression covered by tests or checks
+        - [ ] Expected behavior verified
+    validations:
+      required: true
+
+  - type: input
+    id: affected-area
+    attributes:
+      label: Affected Area
+      description: What part of the system is affected?
+      placeholder: "Authentication, checkout, notification delivery"
+    validations:
+      required: false
+
+  - type: textarea
+    id: technical-notes
+    attributes:
+      label: Technical Notes
+      description: Optional diagnostics, logs, suspected causes,
+        or constraints
+      placeholder: "Stack traces, recent changes,
+        related components, possible causes"
+    validations:
+      required: false
+
+  - type: textarea
+    id: testing-notes
+    attributes:
+      label: Testing Notes
+      description: Optional validation guidance for the fix
+      placeholder: "Specific regression tests, environments, or manual checks"
+    validations:
+      required: false
